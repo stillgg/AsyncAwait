@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Task: optimize `total` call with default value 0 (as in example)
 // to have one-line solution - 1 line instead of 5 lines
@@ -10,7 +10,7 @@ const total = async (items) => {
   let result = 0;
   for (const item of items) {
     if (item.price < 0) {
-      throw new Error('Negative price is not allowed');
+      throw new Error("Negative price is not allowed");
     }
     result += item.price;
   }
@@ -18,18 +18,14 @@ const total = async (items) => {
 };
 
 const electronics = [
-  { name: 'Laptop', price: -1500 },
-  { name: 'Keyboard', price: 100 },
-  { name: 'HDMI cable', price: 10 },
+  { name: "Laptop", price: 1500 },
+  { name: "Keyboard", price: 100 },
+  { name: "HDMI cable", price: 10 },
 ];
 
 // Usage block: change just following code
 
 (async () => {
-  let money = 0;
-  try {
-    money = await total(electronics);
-  } catch {
-  }
-  console.log({ money });
+  const money = await total(electronics);
+  console.log(money);
 })();
